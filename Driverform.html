@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RideWave - Taxi Booking</title>
+    
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+           /* Basic styling for navigation */
+        .home-btn {
+          position: relative;
+          top: 0px;
+          left: 0px;
+          background-color: black;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+        header {
+            
+            
+            
+            text-align: center;
+        }
+        
+        
+        /* Additional styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        
+.container {
+      border-radius: 5px;
+      padding: 2rem 1rem;
+      width: 45rem;
+      background: #FFF5EE;
+      text-align: center;
+
+      margin: 0 auto;
+      font-family: "Times New Roman", Times, serif;
+      font-size:33px;
+      box-shadow: 0 0 15px  rgba(0, 0, 0, 0.3);
+}
+
+.button1 {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button2 {
+  background-color: #f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+textarea {
+    
+    border-width: medium medium medium 1px;
+}
+
+input {
+    border-width: medium medium medium 1px;
+}
+
+select {
+    border-width: medium medium medium 1px;
+}
+    </style>
+</head>
+<body>
+     <!-- Navigation bar -->
+    <a href="index.html" class="home-btn">Back</a>
+    
+    
+    <header>
+        <img src="45731518-car-driving-driver-icon-vector-image-can-also-be-used-for-activities-suitable-for-use-on-web-apps.jpg" style ="width:100%; height: 400px">
+    </header>
+    
+
+    <!-- introduction -->
+    <div class="content">
+        <h1 ><b>Welcome to RideWave </b></h1>
+        <p>Please fill out the form to apply for work as a driver.</p>
+        <h3>What does RideWave offers you?</h3>
+<p>RideWave informs each driver about the particular location, so please ensure that notifications are always turned on to receive passenger pickup location details. RideWave helps find passengers for you. </p>
+    </div>
+    
+    <!-- Form  -->
+ <div class="container">  
+    <h1 style="text-align: Center; font-size:50px""><b>Driver Application Form </b> </h1> 
+<hr>
+ 
+  <form action="https://api.web3forms.com/submit" method="post"  >
+   <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" required><br><br>
+ <hr>
+ 
+ <label for="name">Address: </label>
+    <input type="text" id="adress" name="adress" placeholder="Village+District+PS+pincode" required><br><br>
+    
+ <hr>
+ <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="0000000000" pattern="[0-9]{10}" required><br><br>
+<hr>
+
+<label for="age">Age:</label>
+    <input type="number" id="age" name="age"  pattern="[1-9]{2}" min="19" max="45" required><br><br>
+<hr>
+    <label for="Operational Location">In which place can you Operate:</label>
+    <select id="Operational Location" name="Operational Location" multiple required>
+      
+      <option value="Madhubani">Madhubani </option>
+      <option value="Dharbhanga">Dharbhanga</option>
+      <option value="Jaynagar">Jaynagar</option>
+      <option value="Rajnagar">Rajnagar</option>
+      <option value="Kaluwahi">Kaluwahi</option>
+      <option value="Rahika">Rahika </option>
+      <option value="Benipatti">Benipatti</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+    </select><br><br>
+<hr>
+          
+     <label for="vehicle Type">Vehicle Type:</label>
+    <select id="Vehicle Type" name="Vehicle Type" required>
+      <option value="E rickshaw">E-rickshaw</option>
+      <option value="Auto">Auto</option>
+      <option value="car">car</option> 
+      <option value="Bike">Bike</option>
+      
+    </select><br><br>
+<hr>
+   <label for="vehicle Type">Do you have Driving Licence:</label>
+    <select id="Vehicle Type" name="Vehicle Type" required>     
+      <option value="Bike">Yes</option>
+      <option value="Cycle">No</option>     
+    </select><br><br>   
+<hr>
+    
+    
+<label for="aadhaarNumber">Enter Aadhaar Card Number:</label>
+    <input type="text" id="aadhaarNumber" name="aadhaarNumber" pattern="[2-9]{1}[0-9]{11}" title="Aadhaar number should be Valid " required>
+<hr> 
+
+    <input class="button2" type="reset" value="Reset">
+    <input class="button1" type="submit" value="Submit">
+  </form>
+  
+ </div>
+ 
+ 
+ 
+<!-- Footer -->
+<h2 class="w3-wide w3-center">Term and Condition</h2>
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    
+  <p>I accept the following requirements of the Agreement:</p>
+
+ 
+
+1. All information is valid.<br>
+2. My vehicle is completely safe and functional.<br>
+3. I accept all responsibility.<br>
+4. I acknowledge that I do not misbehave with the passenger.<br>
+5. Fares should be based on mutual understanding or appropriate charges.<br>
+        
+  
+</body>
+</html>
