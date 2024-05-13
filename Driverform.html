@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
     <title>RideWave - Taxi Booking</title>
     
 
@@ -111,63 +112,68 @@ select {
     <!-- introduction -->
     <div class="content">
         <h1 ><b>Welcome to RideWave </b></h1>
-        <p>Please fill out the form to apply for work as a driver.</p>
+        <p>Please fill out the form to apply for work as a driver(ड्राइवर के रूप में काम के लिए आवेदन करने के लिए कृपया फॉर्म भरें).</p>
         <h3>What does RideWave offers you?</h3>
-<p>RideWave informs each driver about the particular location, so please ensure that notifications are always turned on to receive passenger pickup location details. RideWave helps find passengers for you. </p>
+<p>RideWave informs each driver about the particular location for Pickup Passanger, so please ensure that notifications are always turned on to receive passenger pickup location details. RideWave helps find passengers for you(राइडवेव प्रत्येक ड्राइवर को यात्री के स्थान के बारे में सूचित करता है, , इसलिए कृपया सुनिश्चित करें कि यात्री पिकअप स्थान विवरण प्राप्त करने के लिए सूचनाएं हमेशा चालू रहें। ). </p>
     </div>
     
     <!-- Form  -->
  <div class="container">  
-    <h1 style="text-align: Center; font-size:50px""><b>Driver Application Form </b> </h1> 
+    <h1 style="text-align: Center; font-size:50px""><b>Driver Application Form (आवेदन)</b> </h1> 
 <hr>
  
   <form action="https://api.web3forms.com/submit" method="post"  >
    <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
-    <label for="name">Name: </label>
+    <label for="name">Name(नाम):</label>
     <input type="text" id="name" name="name" required><br><br>
  <hr>
  
- <label for="name">Address: </label>
+ <label for="name">Address(पता):</label>
     <input type="text" id="adress" name="adress" placeholder="Village+District+PS+pincode" required><br><br>
     
  <hr>
- <label for="phone">Phone Number:</label>
+ <label for="phone">Phone Number(फ़ोन नंबर):</label>
     <input type="tel" id="phone" name="phone" placeholder="0000000000" pattern="[0-9]{10}" required><br><br>
 <hr>
 
-<label for="age">Age:</label>
+<label for="age">Age(आयु):</label>
     <input type="number" id="age" name="age"  pattern="[1-9]{2}" min="19" max="45" required><br><br>
 <hr>
-    <label for="Operational Location">In which place can you Operate:</label>
+    <label for="Operational Location">In which place can you Operate(आप किस जगह पर ऑपरेट कर सकते हैं?):</label>
     <select id="Operational Location" name="Operational Location" multiple required>
       
-      <option value="Madhubani">Madhubani </option>
-      <option value="Dharbhanga">Dharbhanga</option>
-      <option value="Jaynagar">Jaynagar</option>
-      <option value="Rajnagar">Rajnagar</option>
-      <option value="Kaluwahi">Kaluwahi</option>
-      <option value="Rahika">Rahika </option>
-      <option value="Benipatti">Benipatti</option>
-      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+      
+      <option value="Madhubani">Madhubani(मधुबनी) </option>
+      <option value="Dharbhanga">Dharbhanga(दरभंगा)</option>
+      <option value="Jaynagar">Jaynagar(जयनगर)</option>
+      <option value="Rajnagar">Rajnagar(राजनगर)</option>
+      <option value="Kaluwahi">Kaluwahi(कलुवाही)</option>
+      <option value="Rahika">Rahika(रहिका)</option>
+      <option value="Benipatti">Benipatti(बेनीपट्टी)</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
+      <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
+      <option value="Patna">Patna(पटना)</option>
     </select><br><br>
 <hr>
       
       <label for="vehicle Type">Vehicle Type:</label>
     <select id="Vehicle Type" name="Vehicle Type" required>
-      <option value="E rickshaw">E rickshaw</option>
-      <option value="auto">Auto</option>
-      <option value="car">Car</option>
+      <option value="E rickshaw">E rickshaw(ई रिक्शा)</option>
+      <option value="Auto">Auto(ऑटो)</option>
+      <option value="Standard car">Standard car(कार)</option>
+      <option value="Bus">Bus(बस)</option>
+      <option value="Other vehicle">Other Vehicle(अन्य वाहन)</option>  
     </select><br><br>
 <hr>
-   <label for="vehicle Type">Do you have Driving Licence:</label>
+   <label for="vehicle Type">Do you have Driving Licence(क्या आपके पास ड्राइविंग लाइसेंस है?):</label>
     <select id="Vehicle Type" name="Vehicle Type" required>     
-      <option value="Bike">Yes</option>
-      <option value="Cycle">No</option>     
+      <option value="Bike">Yes(हाँ)</option>
+      <option value="Cycle">No(नहीं)</option>     
     </select><br><br>   
 <hr>
     
     
-<label for="aadhaarNumber">Enter Aadhaar Card Number:</label>
+<label for="aadhaarNumber">Enter Aadhaar Card Number(आधार कार्ड संख्या):</label>
     <input type="text" id="aadhaarNumber" name="aadhaarNumber" pattern="[2-9]{1}[0-9]{11}" title="Aadhaar number should be Valid " required>
 <hr> 
 
@@ -180,18 +186,18 @@ select {
  
  
 <!-- Footer -->
-<h2 class="w3-wide w3-center">Term and Condition</h2>
+<h2 class="w3-wide w3-center">Term and Condition(नियम और शर्तें)</h2>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
     
-  <p>I accept the following requirements of the Agreement:</p>
+  <p>I accept the following requirements of the Agreement( मैं समझौते की निम्नलिखित आवश्यकता को स्वीकार करता हूं|):</p>
 
  
 
-1. All information is valid.<br>
-2. My vehicle is completely safe and functional.<br>
-3. I accept all responsibility.<br>
-4. I acknowledge that I do not misbehave with the passenger.<br>
-5. Fares should be based on mutual understanding or appropriate charges.<br>
+1. All information is valid(सभी दिया गया जानकारी मान्य है).<br>
+2. My vehicle is completely safe and functional(मेरा वाहन पूरी तरह सुरक्षित और कार्यात्मक है).<br>
+3. I accept all responsibility (मैं सभी प्रतिक्रिया स्वीकार करता हूं).<br>
+4. I acknowledge that I do not misbehave with the passenger(स्वीकार करें कि मैं यात्री के साथ दुर्व्यवहार नहीं करता/).<br>
+5. Fares should be based on mutual understanding or appropriate charges(किराया आपसी समझ या उचित शुल्क पर आधारित होना चाहिए|)<br>
         
   
 </body>
