@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
     <title>RideWave - Taxi Booking</title>
     
 
@@ -122,62 +123,68 @@ May your journey be filled with new opportunities, new experiences, and new frie
     </div>
     <!-- Form  -->
  <div class="container">  
-    <h1 style="text-align: Center; font-size:50px""><b>Ride-Sharing</b> </h1> 
+    <h1 style="text-align: Center; font-size:50px""><b>Ride-Sharing(सवारी-साझा)</b> </h1> 
 <hr>
  
   <form action="https://api.web3forms.com/submit" method="post"  >
    <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
-    <label for="pickup_location">Pick-up Location:</label>
+    <label for="pickup_location">Pick-up Location(स्थान से):</label>
     <select id="pickup_location" name="pickup_location" required>
       <option value=""></option>
-      <option value="Madhubani">Madhubani </option>
-      <option value="Dharbhanga">Dharbhanga</option>
-      <option value="Jaynagar">Jaynagar</option>
-      <option value="Rajnagar">Rajnagar</option>
-      <option value="Kaluwahi">Kaluwahi</option>
-      <option value="Rahika">Rahika </option>
-      <option value="Benipatti">Benipatti</option>
-      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+      <option value="Madhubani">Madhubani(मधुबनी) </option>
+      <option value="Dharbhanga">Dharbhanga(दरभंगा)</option>
+      <option value="Jaynagar">Jaynagar(जयनगर)</option>
+      <option value="Rajnagar">Rajnagar(राजनगर)</option>
+      <option value="Kaluwahi">Kaluwahi(कलुवाही)</option>
+      <option value="Rahika">Rahika(रहिका)</option>
+      <option value="Benipatti">Benipatti(बेनीपट्टी)</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
+      <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
+      <option value="Patna">Patna(पटना)</option>
     </select><br><br>
 <hr>
-    <label for="dropoff_location">Drop-off Location:</label>
+    <label for="dropoff_location">Drop-off Location(स्थान तक):</label>
     <select id="dropoff_location" name="dropoff_location" required>
       <option value=""></option>
-     <option value="Madhubani">Madhubani </option>
-      <option value="Dharbhanga">Dharbhanga</option>
-      <option value="Jaynagar">Jaynagar</option>
-      <option value="Rajnagar">Rajnagar</option>
-      <option value="Kaluwahi">Kaluwahi</option>
-      <option value="Rahika">Rahika </option>
-      <option value="Benipatti">Benipatti</option>
-      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+      <option value="Madhubani">Madhubani(मधुबनी) </option>
+      <option value="Dharbhanga">Dharbhanga(दरभंगा)</option>
+      <option value="Jaynagar">Jaynagar(जयनगर)</option>
+      <option value="Rajnagar">Rajnagar(राजनगर)</option>
+      <option value="Kaluwahi">Kaluwahi(कलुवाही)</option>
+      <option value="Rahika">Rahika(रहिका)</option>
+      <option value="Benipatti">Benipatti(बेनीपट्टी)</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
+      <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
+      <option value="Patna">Patna(पटना)</option>
     </select><br><br>
 <hr>
-    <label for="pickup_date">Pickup Date and Time:</label>
-    <input type="datetime-local" id="pickup_date" name="pickup_date" value="<?php echo date('Y-m-d\TH:i'); ?>" required><br><br>
+    <label for="pickup_date">Pickup Date and Time(यात्रा की तारीख):</label>
+    <input type="datetime-local" id="pickup_date" name="pickup_date" value="<?php echo date('d-m-Y\TH:i'); ?>" required><br><br>
 <hr>         
-     <label for="vehicle Type">Vehicle Type:</label>
+     <label for="vehicle Type">Vehicle Type(वाहन का प्रकार):</label>
     <select id="Vehicle Type" name="Vehicle Type" required>
-      
-      <option value="Bike">Bike</option>
-      <option value="Cycle">Cycle</option>
-      <option value="car">car</option>     
+      <option value=""></option>
+      <option value="Bike">Bike(बाइक)</option>
+      <option value="car">Car(कार)</option>
+      <option value="Bicycle">Bicycle(साइकिल)</option>
+      <option value="Any vehicle">Any Vehicle(उपरोक्त में से कोई भी)</option>  
     </select><br><br>
+<hr>
  <hr>         
-     <label for="I'am"> As a :</label>
+     <label for="I'am"> As a(के तौर पर):</label>
     <select id="I'm" name="I'am" required>
       <option value=""></option>
-      <option value="Vehicle Operator">Vehicle Operator</option>
-      <option value="Passanger/Patner">Passenger/Partner</option>
+      <option value="Vehicle Operator">Vehicle Operator(चालक)</option>
+      <option value="Passanger/Patner">Passenger/Partner(यात्रि)</option>
     </select><br><br>
 <hr>
-    <label for="name">Name: </label>
+    <label for="name">Name(नाम):</label>
     <input type="text" id="name" name="name" required><br><br>
 <hr>
-    <label for="phone">Phone Number:</label>
+    <label for="phone">Phone Number(फ़ोन नंबर):</label>
     <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
 <hr>
-    <label for="additional_info">Additional requests:</label><br>
+    <label for="additional_info">Additional requests(अतिरिक्त अनुरोध):</label><br>
     <textarea id="additional_info" name="additional_info" rows="4" cols="25"></textarea><br><br>
 
 <hr> 
@@ -192,6 +199,7 @@ May your journey be filled with new opportunities, new experiences, and new frie
 <h2 class="w3-wide w3-center">Recommendations</h2>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p>Fares should be based on mutual understanding or appropriate charges.</p>
+    <p>किराया आपसी समझ या उचित शुल्क पर आधारित होना चाहिए.</p>
  </footer>
  
 </body>
