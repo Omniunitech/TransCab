@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
     <title>RideWave - Taxi Booking</title>
     
 
@@ -118,13 +119,13 @@ select {
     
     <!-- introduction -->
     <div class="content">
-        <h1 ><b>Welcome to RideWave </b></h1>
-        <p>Book your ride with ease and convenience!</p>
-        <h3>What does RideWave offers you?</h3>
-<p>Next to you in 10-12 minutes!</p>
-<p>RideWave sends the nearest Vehicle to you after your call  directs it to you in 10-12 minutes.</p>
+        <h1 ><b>Welcome to RideWave (राइडवेव में आपका स्वागत है ) </b></h1>
+        <p>Book your ride with ease and convenience! (आसानी और सुविधा के साथ अपनी सवारी बुक करें|)</p>
+        <h3>What does RideWave offers you? (राइडवेव आपको क्या ऑफर करता है ?)</h3>
+<p>Next to you in 8-12 minutes! (8-12 मिनट में आपके पास!)</p>
+<p>RideWave sends the nearest Vehicle to you after your call  directs it to you in 8-12 minutes.(राइडवेव आपके कॉल के 8-12 मिनट बाद आपके पास निकटतम वाहन भेजता है।)</p>
 
-<h3>Reserve Door-to-Door Passenger Transportation!</h3>
+<h3>Reserve Door-to-Door Passenger Transportation!(घर से घर यात्री परिवहन आरक्षित करें!)</h3>
 
 <p>With RideWave, Our reservation service offers convenient door-to-door transportation for passengers with well maintained vehicle.</p>
     </div>
@@ -132,63 +133,67 @@ select {
     
 <!-- Form  -->
  <div class="container">  
-    <h1 style="text-align: Center; font-size:50px""><b>Taxi Booking</b> </h1> 
+    <h1 style="text-align: Center; font-size:50px""><b>Taxi Booking(टैक्सी बुकिंग)</b> </h1> 
 <hr> 
   <form action="https://api.web3forms.com/submit" method="post"  >
    <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
-    <label for="pickup_location">Pick-up Location:</label>
+    <label for="pickup_location">Pick-up Location(स्थान से):</label>
     <select id="pickup_location" name="pickup_location" required>
       <option value=""></option>
-      <option value="Madhubani">Madhubani </option>
-      <option value="Dharbhanga">Dharbhanga</option>
-      <option value="Jaynagar">Jaynagar</option>
-      <option value="Rajnagar">Rajnagar</option>
-      <option value="Kaluwahi">Kaluwahi</option>
-      <option value="Rahika">Rahika </option>
-      <option value="Benipatti">Benipatti</option>
-      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+      <option value="Madhubani">Madhubani(मधुबनी) </option>
+      <option value="Dharbhanga">Dharbhanga(दरभंगा)</option>
+      <option value="Jaynagar">Jaynagar(जयनगर)</option>
+      <option value="Rajnagar">Rajnagar(राजनगर)</option>
+      <option value="Kaluwahi">Kaluwahi(कलुवाही)</option>
+      <option value="Rahika">Rahika(रहिका)</option>
+      <option value="Benipatti">Benipatti(बेनीपट्टी)</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
+      <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
+      <option value="Patna">Patna(पटना)</option>
     </select><br><br>
 <hr>
-    <label for="dropoff_location">Drop-off Location:</label>
+    <label for="dropoff_location">Drop-off Location(स्थान तक):</label>
     <select id="dropoff_location" name="dropoff_location" required>
       <option value=""></option>
-     <option value="Madhubani">Madhubani </option>
-      <option value="Dharbhanga">Dharbhanga</option>
-      <option value="Jaynagar">Jaynagar</option>
-      <option value="Rajnagar">Rajnagar</option>
-      <option value="Kaluwahi">Kaluwahi</option>
-      <option value="Rahika">Rahika </option>
-      <option value="Benipatti">Benipatti</option>
-      <option value="Loha/Kapsiya">Loha/Kapsiya</option>
+      <option value="Madhubani">Madhubani(मधुबनी) </option>
+      <option value="Dharbhanga">Dharbhanga(दरभंगा)</option>
+      <option value="Jaynagar">Jaynagar(जयनगर)</option>
+      <option value="Rajnagar">Rajnagar(राजनगर)</option>
+      <option value="Kaluwahi">Kaluwahi(कलुवाही)</option>
+      <option value="Rahika">Rahika(रहिका)</option>
+      <option value="Benipatti">Benipatti(बेनीपट्टी)</option>
+      <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
+      <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
+      <option value="Patna">Patna(पटना)</option>
     </select><br><br>
 <hr>
-    <label for="pickup_date">Pickup Date and Time:</label>
+    <label for="pickup_date">Pickup Date and Time(यात्रा की तारीख):</label>
     <input type="datetime-local" id="pickup_date" name="pickup_date" value="<?php echo date('Y-m-d\TH:i'); ?>" required><br><br>
 <hr>         
-     <label for="vehicle Type">Vehicle Type:</label>
+     <label for="vehicle Type">Vehicle Type(वाहन का प्रकार):</label>
     <select id="Vehicle Type" name="Vehicle Type" required>
       <option value=""></option>
-      <option value="E rickshaw">E rickshaw</option>
-      <option value="Auto">Auto</option>
-      <option value="Standard car">Standard car</option>
-      <option value="Bus">Bus</option>
-      <option value="Any vehicle">Any Vehicle</option>  
+      <option value="E rickshaw">E rickshaw(ई रिक्शा)</option>
+      <option value="Auto">Auto(ऑटो)</option>
+      <option value="Standard car">Standard car(कार)</option>
+      <option value="Bus">Bus(बस)</option>
+      <option value="Any vehicle">Any Vehicle(उपरोक्त में से कोई भी)</option>  
     </select><br><br>
 <hr>
-    <label for="reserve_vehicle">Do you need Door to door Service/ Reserve Vehicle ?:</label>
+    <label for="reserve_vehicle">Do you need Door to door Service/ Reserve Vehicle(आरक्षित वाहन)?:</label>
     <select id="reserve_vehicle" name="reserve_vehicle" required>
       <option value=""></option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
+      <option value="Yes">Yes(हाँ)</option>
+      <option value="No">No(नहीं)</option>
     </select><br><br>
 <hr>
-    <label for="name">Name: </label>
+    <label for="name">Name(नाम):</label>
     <input type="text" id="name" name="name" required><br><br>
 <hr>
-    <label for="phone">Phone Number:</label>
+    <label for="phone">Phone Number(फ़ोन नंबर):</label>
     <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
 <hr>
-    <label for="additional_info">Additional requests:</label><br>
+    <label for="additional_info">Additional requests(अतिरिक्त अनुरोध):</label><br>
     <textarea id="additional_info" name="additional_info" rows="4" cols="25"></textarea><br><br>
 
 <hr> 
