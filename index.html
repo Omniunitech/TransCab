@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcfp153e9jMeDiGVK4ckgAEG6y7Ode6hk&libraries=places"></script>
     <style>
         /* Basic styling for navigation */
         .navbar {
@@ -97,6 +98,12 @@ input {
 select {
     border-width: medium medium medium 1px;
 }
+
+#map {
+            height: 500px;
+            width: 100%;
+        }
+       
     </style>
 </head>
 <body>
@@ -205,17 +212,80 @@ select {
     
  <hr>
   
-  <!-- Image of location/map -->
+  <!--  location/map -->
+  
+    <div id="map"></div>
 
- <img src="istockphoto-1294019348-612x612.jpg" class="w3-image w3-greyscale-min" style="width:100%;height:400px;">
- 
+  <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 25.6126779836887, lng: 85.11698131542965},
+                zoom: 13
+            });
+
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            map.addListener('bounds_changed', function() {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+            searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                markers.forEach(function(marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    if (place.geometry.viewport) {
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+    
     <!-- Footer -->
-<h2 class="w3-wide w3-center">CONTACT</h2>
+<h4 class="w3-wide w3-center">CONTACT</h4>
+
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   
-        <i class="fa fa-envelope" style="width:30px"> </i> <a href="mailto:ridewave000@gmail.com">ridewave000@gmail.com</a><br>
+        <i class="fa fa-envelope" style="width:30px"> </i> <a href="mailto:ridewave000@gmail.com">Email</a><br>
   <i class="fa fa-telegram w3-hover-opacity "></i>
-  <a href="https://t.me/OmniunitechBot" target="_blank" rel="noopener noreferrer">Feedback</a>
+  <a href="https://t.me/OmniunitechBot" target="_blank" rel="noopener noreferrer">Support | Message</a>
     
 </body>
 </html>
