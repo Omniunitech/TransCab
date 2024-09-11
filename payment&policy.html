@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment & Policy Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .testimonials {
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin-bottom: 10px;
+        }
+       
+        .testimonial p {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .payment-section {
+            margin-top: 20px;
+        }
+        .payment-section select, 
+        .payment-section input {
+            display: block;
+            width: 95%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-section .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .payment-section .payment-methods img {
+            width: 50px;
+            height: 30px;
+        }
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: black;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .qr {
+             position: absolute;
+             left: 20px;
+        
+            
+            
+        }
+        li {
+                font-size: 1em;
+                margin-bottom: 15px;
+                font-family: Verdana ;
+            }
+
+            h1, h2 {
+            color: black;
+            font-size: 1.5em;
+            text-align: left;
+        }
+
+        #confirmation-message {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            color: #d9534f;
+        }
+        .payment-button {
+            
+            position: relative;
+            align-items: left ;
+            font-size: 0.8em;
+            
+             left: -40%;
+        }
+
+       
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+
+
+            <form id="payment-form">
+        
+                <div class="payment-section">
+                   
+                   <h2 > Payment to TransCab</h2>
+                   
+                   
+                   <input type="text" id="name" name="name" placeholder="Enter your name ">
+
+                   <input type="number" id="amount" name="amount" placeholder="Enter Amount (to pay)" required>
+                  
+                  
+                   <button type="button" onclick="toggleQRCode()" class="qr"> Show QR Code</button> <br>
+<img src="qrcode.jpg" id="qr-code" style="width:50%; height: 30%; display:none;">
+
+  
+</p>
+              
+              <br>     
+                   
+                   <select id="month" name="month" aria-placeholder="PAYMENT FOR:">
+                       <option value="1"></option>
+                       <option value="2">Driving Charge</option>
+                       <option value="3">Other charge</option>
+                   </select> <br>
+                   
+                   
+
+                   
+                    
+                   
+                   <button type="button" onclick="initiatePayment()" class="order-btn">PAY Now</button>
+                   <div id="confirmation-message">
+                       <p>We hope your payment was successful. Otherwise, we can't resume processing your Next step (हमें उम्मीद है कि आपका भुगतान सफल रहा होगा। अन्यथा, हम आपके आगे की प्रक्रिया फिर से शुरू नहीं कर सकते). </p>
+                        <p>   please Verify Your Payment .......</p>
+                   </div>
+                  
+                   <p style="text-align: center;">                         Powered by <strong>UPI</strong></p>
+                    
+                </div>
+               </form>  
+<a href="https://t.me/OmniunitechBot" class="payment-button">Payment Verify?</a>
+               <hr>
+
+
+
+            <h1 style="text-align: center"><u>Terms of Service</u></h1>
+            <ol>
+                <li>By accessing or using TransCab services, you agree to comply with and be bound by these Terms and Policy. If you do not agree to these terms, please do not use our services.</li><br>
+                
+                <li>TransCab reserves the right to terminate services to any user who violates these terms or engages in unlawful activitie</li><br>
+                <li>TransCab may amend these terms at any time. Users will be notified of significant changes, and continued use of services will constitute acceptance of the new terms.</li> <br> 
+                <li>By using TransCab, you acknowledge that you have read, understood, and agree to these Terms and Policy.</li><br><br>
+
+              
+
+            </ol>
+            
+
+       
+
+            
+        </div>
+
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+         function initiatePayment() {
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+            const paymentFor = document.getElementById('month').value;
+            const upiId = '9128191357@ibl'; // Your UPI ID
+            
+            if (name && amount && paymentFor) {
+                // Create UPI payment URL
+                const upiURL = `upi://pay?pa=${upiId}&pn=RecipientName&am=${amount}&cu=INR`;
+
+                // Open UPI payment URL in a new tab (or same tab)
+                window.location.href = upiURL;
+
+                // Display confirmation message after the payment initiation
+                document.getElementById('confirmation-message').style.display = 'block';
+
+                // Simulate a successful payment process (for demonstration purposes)
+                setTimeout(() => {
+                    generatePaymentSlip(name, amount, paymentFor, upiId);
+                }, 40000); // 50 seconds delay
+            } else {
+                alert('Please enter all required details.');
+            }
+        }
+
+        function generatePaymentSlip(name, amount, paymentFor) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Set font to monospaced and text alignment to center
+    doc.setFont("courier", "normal");
+    doc.setFontSize(12);
+    doc.text('I hope your payment was successful!', doc.internal.pageSize.getWidth() / 2, 20, { align: 'center' });
+
+    doc.text(`Name: ${name}`, doc.internal.pageSize.getWidth() / 2, 40, { align: 'center' });
+    doc.text(`Amount: ${amount}`, doc.internal.pageSize.getWidth() / 2, 50, { align: 'center' });
+    doc.text(`Payment For: ${getPaymentForText(paymentFor)}`, doc.internal.pageSize.getWidth() / 2, 60, { align: 'center' });
+    doc.text(`Date: ${new Date().toLocaleString()}`, doc.internal.pageSize.getWidth() / 2, 80, { align: 'center' });
+
+    // Set text color to blue and underline "Click here to Verify"
+    doc.setTextColor(0, 0, 255); // Set text color to blue (RGB)
+    doc.textWithLink('Click here to Verify', doc.internal.pageSize.getWidth() / 2, 100, {
+        url: 'https://t.me/OmniunitechBot',
+        align: 'center'
+    });
+
+    // Save the PDF
+    doc.save('payment_slip.pdf');
+}
+
+function getPaymentForText(paymentFor) {
+    // You can customize this function to return a proper description of the payment
+    return paymentFor;
+        }
+        function getPaymentForText(value) {
+            switch (value) {
+                case '2':
+                    return 'Service Charge';
+                case '3':
+                    return 'Exam Fee & Charge';
+                default:
+                    return '';
+            }
+        }
+
+        function toggleQRCode() {
+    const qrCode = document.getElementById('qr-code');
+    const paymentVerify = document.getElementById('payment-verify');
+    
+    if (qrCode.style.display === 'none') {
+      qrCode.style.display = 'block';
+      
+    } else {
+      qrCode.style.display = 'none';
+      
+    }
+  }
+    </script>
+</body>
+</html>
