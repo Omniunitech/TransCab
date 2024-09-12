@@ -142,8 +142,7 @@ select {
  <div class="container">  
     <h1 style="text-align: Center; font-size:50px""><b>Taxi Booking(टैक्सी बुकिंग)</b> </h1> 
 <hr> 
-  <form action="https://api.web3forms.com/submit" method="post"  >
-   <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
+  <form method="post" name=" google-sheet"> 
     <label for="pickup_location">Pick-up Location(स्थान से):</label>
     <select id="pickup_location" name="pickup_location" required>
       <option value=""></option>
@@ -157,7 +156,7 @@ select {
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-         <textarea id="location-details" name="location-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
+         <textarea id="pickuplocation-details" name="pickuplocation-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
     </select><br><br>
 <hr>
     <label for="dropoff_location">Drop-off Location(स्थान तक):</label>
@@ -173,7 +172,7 @@ select {
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-         <textarea id="location-details" name="location-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
+         <textarea id="dropofflocation-details" name="dropofflocation-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
     </select><br><br>
 <hr>
     <label for="pickup_date">Pickup Date and Time(यात्रा की तारीख):</label>
@@ -219,6 +218,17 @@ select {
     <div id="map"></div>
 
   <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxTBytuZTw0dpD820nANLdpKH7qkkHQSNin6_ZMqJ8DA01sWGmUy7jbCcGZ_oMAy4kt/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+
+      
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 25.6126779836887, lng: 85.11698131542965},
