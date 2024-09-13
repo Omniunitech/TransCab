@@ -113,7 +113,9 @@ May your journey be filled with new opportunities, new experiences, and new frie
  
   <form action="https://api.web3forms.com/submit" method="post"  >
    <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
-    <label for="pickup_location">Pick-up Location(स्थान से):</label>
+        <label for="pickup_location">Pick-up Location(स्थान से):<a  href="https://www.google.com/maps/search/?api=1&query=25.9644,85.2722" target="_blank">
+        <i class="fa fa-map"></i>
+    </a></label>
     <select id="pickup_location" name="pickup_location" required>
       <option value=""></option>
       <option value="Madhubani">Madhubani(मधुबनी) </option>
@@ -126,9 +128,13 @@ May your journey be filled with new opportunities, new experiences, and new frie
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-    </select><br><br>
-<hr>
-    <label for="dropoff_location">Drop-off Location(स्थान तक):</label>
+    </select>
+         <textarea id="pickuplocation-details" name="pickuplocation-details" rows="2" cols="20" placeholder="विवरण..."></textarea>
+    <br><br>
+
+    <label for="dropoff_location">Drop-off Location(स्थान तक):<a  href="https://www.google.com/maps/search/?api=1&query=25.9644,85.2722" target="_blank">
+        <i class="fa fa-map"></i>
+    </a></label>
     <select id="dropoff_location" name="dropoff_location" required>
       <option value=""></option>
       <option value="Madhubani">Madhubani(मधुबनी) </option>
@@ -141,11 +147,14 @@ May your journey be filled with new opportunities, new experiences, and new frie
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-    </select><br><br>
-<hr>
+    </select>
+         <textarea id="dropofflocation-details" name="dropofflocation-details" rows="2" cols="20" placeholder="विवरण..."></textarea>
+    <br><br>
+
+      
     <label for="pickup_date">Pickup Date and Time(यात्रा की तारीख):</label>
     <input type="datetime-local" id="pickup_date" name="pickup_date" value="<?php echo date('d-m-Y\TH:i'); ?>" required><br><br>
-<hr>         
+        
      <label for="vehicle Type">Vehicle Type(वाहन का प्रकार):</label>
     <select id="Vehicle Type" name="Vehicle Type" required>
       <option value=""></option>
@@ -154,25 +163,25 @@ May your journey be filled with new opportunities, new experiences, and new frie
       <option value="Bicycle">Bicycle(साइकिल)</option>
       <option value="Any vehicle">Any Vehicle(उपरोक्त में से कोई भी)</option>  
     </select><br><br>
-<hr>
- <hr>         
+
+       
      <label for="I'am"> As a(के तौर पर):</label>
     <select id="I'm" name="I'am" required>
       <option value=""></option>
       <option value="Vehicle Operator">Vehicle Operator(चालक)</option>
       <option value="Passanger/Patner">Passenger/Partner(यात्रि)</option>
     </select><br><br>
-<hr>
+
     <label for="name">Name(नाम):</label>
     <input type="text" id="name" name="name" required><br><br>
-<hr>
+
     <label for="phone">Phone Number(फ़ोन नंबर):</label>
     <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
-<hr>
+      
     <label for="additional_info">Additional requests(अतिरिक्त अनुरोध):</label><br>
     <textarea id="additional_info" name="additional_info" rows="4" cols="25"></textarea><br><br>
 
-<hr> 
+
     <input class="button2" type="reset" value="Reset">
     
     <input class="button1" type="submit" value="Submit">
