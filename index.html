@@ -144,7 +144,9 @@ select {
 <hr> 
   <form action="https://api.web3forms.com/submit" method="post"  >
    <input type="hidden" name="access_key" value="c4a1d48a-a6a3-4cb2-9867-1daeda687af6">
-    <label for="pickup_location">Pick-up Location(स्थान से):</label>
+    <label for="pickup_location">Pick-up Location(स्थान से):<a  href="https://www.google.com/maps/search/?api=1&query=25.9644,85.2722" target="_blank">
+        <i class="fa fa-map"></i>
+    </a></label>
     <select id="pickup_location" name="pickup_location" required>
       <option value=""></option>
       <option value="Madhubani">Madhubani(मधुबनी) </option>
@@ -157,10 +159,13 @@ select {
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-         <textarea id="pickuplocation-details" name="pickuplocation-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
-    </select><br><br>
+    </select>
+         <textarea id="pickuplocation-details" name="pickuplocation-details" rows="2" cols="20" placeholder="विवरण..."></textarea>
+    <br><br>
 
-    <label for="dropoff_location">Drop-off Location(स्थान तक):</label>
+    <label for="dropoff_location">Drop-off Location(स्थान तक):<a  href="https://www.google.com/maps/search/?api=1&query=25.9644,85.2722" target="_blank">
+        <i class="fa fa-map"></i>
+    </a></label>
     <select id="dropoff_location" name="dropoff_location" required>
       <option value=""></option>
       <option value="Madhubani">Madhubani(मधुबनी) </option>
@@ -173,8 +178,9 @@ select {
       <option value="Loha/Kapsiya">Loha/Kapsiya(लोहा/कपसिया)</option>
       <option value="Muzzaparpur">Muzzaparpur(मुजफ्फरपुर)</option>
       <option value="Patna">Patna(पटना)</option>
-         <textarea id="dropofflocation-details" name="dropofflocation-details" rows="3" cols="21" placeholder="विवरण..."></textarea>
-    </select><br><br>
+    </select>
+         <textarea id="dropofflocation-details" name="dropofflocation-details" rows="2" cols="20" placeholder="विवरण..."></textarea>
+    <br><br>
 
     <label for="pickup_date">Pickup Date and Time(यात्रा की तारीख):</label>
     <input type="datetime-local" id="pickup_date" name="pickup_date" value="<?php echo date('d-m-Y\TH:i'); ?>" required><br><br>
